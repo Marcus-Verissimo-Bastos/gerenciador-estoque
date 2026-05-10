@@ -67,6 +67,12 @@ export default function Home() {
         <div className='bg-white p-8 rounded-lg shadow-md w-full max-w-lg mx-auto flex flex-col'>
             <h1 className='text-2xl font-bold text-gray-800 mb-6 text-center'>Registrar Movimentação</h1>
             <div className='flex flex-col gap-3 mb-6'>
+                <select className='border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500' onChange={(e) => setIdProduto(e.target.value)}>
+                    <option>Selecione um Produto</option>
+                        {produtos.map((p) => (
+                            <option key={p.id} value={p.id}>{p.nome}</option>
+                        ))}
+                </select>
                 <input className='border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500' value={quantidade} onChange={(e) => setQuantidade(e.target.value)} type='number'step="any" placeholder='Digite a quantidade'/>
                 <input className='border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500' value={dataMovimentacao} onChange={(e) => setDataMovimentacao(e.target.value)} type='date' placeholder='Digite a data'/>
 
@@ -76,17 +82,11 @@ export default function Home() {
                     <option value={'saida'}>Saída</option>
                 </select>
 
-                <select className='border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500' onChange={(e) => setIdProduto(e.target.value)}>
-                    <option>Selecione um Produto</option>
-                        {produtos.map((p) => (
-                            <option key={p.id} value={p.id}>{p.nome}</option>
-                        ))}
-                </select>
                 
                 <select className='border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500' onChange={(e) => setIdFuncionario(e.target.value)}>
                     <option>Selecione um Funcionario</option>
                         {funcionarios.map((f) => (
-                            <option key={f.id} value={f.id}>{f.nome}</option>
+                            <option key={f.id} value={f.id}>{f.nome} - {f.cargo}</option>
                         ))}
                 </select>
 
