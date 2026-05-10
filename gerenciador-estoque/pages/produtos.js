@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 
 export default function Home() {
   const [nome, setNome] = useState('')
-  const [preco, setPreco] = useState(0)
-  const [estoque, setEstoque] = useState(0)
+  const [preco, setPreco] = useState('')
+  const [estoque, setEstoque] = useState('')
   const [idFornecedor, setIdFornecedor] = useState('')
   const [idCategoria, setIdCategoria] = useState('')
   const [produtos, setProdutos] = useState([])
@@ -53,8 +53,8 @@ export default function Home() {
     })
 
     setNome('')
-    setPreco(0)
-    setEstoque(0)
+    setPreco('')
+    setEstoque('')
     setIdFornecedor('')
     setIdCategoria('')
     buscarProdutos()
