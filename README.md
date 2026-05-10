@@ -43,7 +43,7 @@ Inicie o servidor:
 npm run dev
 ```
 
-Acesse http://localhost:3000
+Acesse http://localhost:3001
 
 ##Estrutura do projeto
 
